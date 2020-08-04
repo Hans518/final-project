@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student Exam Scores</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div clas="container">
+    <div class="jumbotron text-center">
+      <h1>Student Test Scores</h1>
+      <h2>What affects them?</h2>
+    </div>
+      
+    <!-- surf data -->
+    <div class="row">
+      <div class="col-md-8 col-md-offset-1">
+        <h1>Overview</h1>
+        <p>Student performance is always a primary issue when it comes to education. Parents, teachers, administration, community leaders are always concerned about how well students perform. Much of our tax dollars goes into funding education and everything that it involves. So 
+            what are the primary drivers that determine student success? This project aims to get an idea of what those drivers to success are and what can be done to improve student performance. The data set that we are working with is simulated data that depicts student standardized tests
+            scores in a ficticious public school. This data includes common metrics that are looked at by education professionals, albeit, given the simulated nature of this data, it is a bit limited in scope. None the less we are able to get a good idea of what this data is telling us with respect
+            how students perform and why. 
+        </p>
+        <h3>The Data</h3>
+        <p>
+            This data comes from a graduate student at BYU named Royce Kimmons who specializes in the relationship between technology and education. 
+        <br>
+        The link to his website can be found here. <a href="http://roycekimmons.com/">http://roycekimmons.com/</a>
+        <br>
+        <br>
+        <img src="images/basic_data_1.png" width ="805" height="210" alt="basic dataframe">
+        </p>
+        <br>
+        <br>
+        <p>
+            This data contains the following columns.<br>
+            <ul>
+                <li>Gender - This one is pretty self explanitory</li>
+                <li>Race/Ethnicity - For the sake of not playing into stereotypes it's randomized.</li>
+                <li>Parental Level of Education - This is metric of family support with respect to a student's education.</li>
+                <li>Lunch - Whether or not the student recieves free or subsidized lunch as a measure of poverty.</li>
+                <li>Test Preparation Course - Exactly what it sounds like. For our purposes we're using it as a metric of intervention in student performance.</li>
+                <li>Math score</li>
+                <li>Reading score</li>
+                <li>Writing score</li>
+                <li>Composite score - this is a metric that we generated and it's an average of the previous three.</li>
+            </ul>
+        </p>
+        <br>
+        <h3>Overall Test Averages</h3>
+        <p>
+            These were some pretty expected observations that fit into societal stereotyes. The boys overall scored better on average in math. Girls scored better in reading and writing. This data shows a racially based achievement gap between what appear to be the higher achieving groups, those being Groups D and E and the lower achieving groups A and B. When it comes to parental level of education, the scores basically corespond with the parents level of ed -- the higher the parent's achievement the higher the kid's scores tended to be. The most intersting takaway here is that the students who have parents that have completed a degree score pretty significantly higher. 
+            Free/reduced lunch recipients seemed to show a sizeable gab with about an 11% different between their paid lunch classmates. This is a metric that indicates poverty, poverty is definitely an indicator. The test prep course overall appears to help quite a bit as well. <br>
+        </p>
+            <img src="images/over_score_gender.png" alt="overall_score_gender"><br>
+            <img src="images/over_score_race_eth.png" alt="overall_score_race_eth"><br>
+            <img src="images/overall_score_par_ed.png" alt="overall_score_par_ed"><br>
+            <img src="images/overall_score_lunch.png" alt="overall_score_lunch"><br>
+            <img src="images/overall_score_test_prep.png" alt="overall_score_test_prep"><br>
+        <br>
+        <p>
+            Already we can see an achievement gap between group E and groups A and B. Also there is an education based achievement gap that is particularly large between children with parents that have not finished high school and children with parents that hold an advanced degree. Below are some charts that reflect these findings.The bar graph also clearly shows an economic achievement gap in the lunch chart.
+        </p>
+        <h3>Data By Gender</h3>
+        <p>
+            This series of graphs breaks down the mean test scores by gender vs ethnicity, parent's education, and whether or not the child is getting free lunch. While this series a graphs follows the same trajectory as those prior, two trends become apparent. That is, exactly how much math scores struggle for girls 
+            from more disadvantaged demographics. The same can be said for boys and writing. The more disadvantaged the demographic, the worse the mean score is particularly for children of the least educated parents. 
+        </p>
+            <img src="images/gender_race_eth.png" alt="gender_race_eth"><br>
+            <img src="images/gender_par_ed.png" alt="gender_par_ed"><br>
+            <img src="images/gender_lunch.png" alt="gender_lunch"><br>
+            <img src="images/gender_test_prep.png" alt="gender_test_prep"><br>
+        <br>
+        <p>
+            These charts mostly reinforce what is discussed at the beginning. Something that is notable is that with the exception of math, girls tend to produce better test scores. That is true across all demographics, at least according to this data. Something that we believe is of note is that the reading score seem sto be very closely correlated with writing. If the reading score is good, so is writing.
+        </p>
+        <h3>Lunch</h3>
+        <br>
+      </div>
+    </div>
+  </div>
+  
+
+
+</body>
+</html>
+
