@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Student Exam Scores</title>
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -18,9 +19,7 @@
       <subheader>What affects them?</subheader>
     </div>
       
-    <!-- surf data -->
-    <div class="row">
-      <div class="col-md-8 col-md-offset-1">
+    <div class="container">
         <h1>Overview</h1>
         <p>Student performance is always a primary issue when it comes to education. Parents, teachers, administration, community leaders are always concerned about how well students perform. Much of our tax dollars goes into funding education and everything that it involves. So 
             what are the primary drivers that determine student success? This project aims to get an idea of what those drivers to success are and what can be done to improve student performance. The data set that we are working with is simulated data that depicts student standardized tests
@@ -38,7 +37,7 @@
         <a href="https://drive.google.com/file/d/1Rb5A7Wdy3UCXwjEHJO2YXMbJu46Ewcj3/view?usp=sharing" target="_blank">Here is the link to the Jupyter Notebook with all the code that generated these images and tables.</a> 
         <br>
         <br>
-        <img src="images/basic_data_1.png" width ="805" height="210" alt="basic dataframe">
+        <img src="images/basic_data_1.png" id="dataframe" width ="805" height="210" alt="basic dataframe">
         </p>
         <br>
         <br>
@@ -63,10 +62,12 @@
             These were some pretty expected observations that fit into societal stereotyes. The boys overall scored better on average in math. Girls scored better in reading and writing. This data shows a racially based achievement gap between what appear to be the higher achieving groups, those being Groups D and E and the lower achieving groups A and B. When it comes to parental level of education, the scores basically corespond with the parents level of ed -- the higher the parent's achievement the higher the kid's scores tended to be. The most intersting takaway here is that the students who have parents that have completed a degree score pretty significantly higher. 
             Free/reduced lunch recipients seemed to show a sizeable gab with about an 11% different between their paid lunch classmates. This is a metric that indicates poverty, poverty is definitely an indicator. The test prep course overall appears to help quite a bit as well. <br>
         </p>
-            <img src="images/over_score_gender.png" class="plot" alt="overall_score_gender"><br>
-            <table border="1" class="dataframe">
+
+    <!-- Overall - Gender-->    
+            <img src="images/over_score_gender.png" class="plot" alt="overall_score_gender">
+            <br>
+            <table class="table table-sm table-hover">
                 <thead>
-                  <tr style="text-align: right;">
                     <th></th>
                     <th>math score</th>
                     <th>reading score</th>
@@ -74,7 +75,7 @@
                     <th>composite score</th>
                   </tr>
                   <tr>
-                    <th>test preparation course</th>
+                    <th>gender</th>
                     <th></th>
                     <th></th>
                     <th></th>
@@ -83,40 +84,26 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <th>completed</th>
-                    <td>70.25</td>
-                    <td>74.44</td>
-                    <td>75.22</td>
-                    <td>73.31</td>
+                    <th>female</th>
+                    <td>63.97</td>
+                    <td>72.95</td>
+                    <td>72.80</td>
+                    <td>69.91</td>
                   </tr>
                   <tr>
-                    <th>none</th>
-                    <td>64.57</td>
-                    <td>67.19</td>
-                    <td>65.00</td>
-                    <td>65.59</td>
+                    <th>male</th>
+                    <td>69.35</td>
+                    <td>66.51</td>
+                    <td>64.38</td>
+                    <td>66.75</td>
                   </tr>
                 </tbody>
               </table>
-            <img src="images/over_score_race_eth.png" alt="overall_score_race_eth"><br>
-            <div class="output_html rendered_html output_subarea output_execute_result">
-                <div>
-                <style scoped="">
-                    .dataframe tbody tr th:only-of-type {
-                        vertical-align: middle;
-                    }
-                
-                    .dataframe tbody tr th {
-                        vertical-align: top;
-                    }
-                
-                    .dataframe thead th {
-                        text-align: right;
-                    }
-                </style>
-                <table border="1" class="dataframe">
+    <!-- Overall - Ethnicity-->  
+            <img src="images/over_score_race_eth.png" alt="overall_score_race_eth">
+            <br>           
+            <table class="table table-sm table-hover">
                   <thead>
-                    <tr style="text-align: right;">
                       <th></th>
                       <th>math score</th>
                       <th>reading score</th>
@@ -169,160 +156,144 @@
                     </tr>
                   </tbody>
                 </table>
-                </div>
-                </div>
-            
-            <img src="images/overall_score_par_ed.png" alt="overall_score_par_ed"><br>
-
-            <div class="output_html rendered_html output_subarea output_execute_result">
-                <div>
-                    <table border="1" class="dataframe">
-                    <thead>
-                        <tr style="text-align: right;">
-                        <th></th>
-                        <th>math score</th>
-                        <th>reading score</th>
-                        <th>writing score</th>
-                        <th>composite score</th>
-                        </tr>
-                        <tr>
-                        <th>parental level of education</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th>associate's degree</th>
-                        <td>68.94</td>
-                        <td>71.92</td>
-                        <td>70.99</td>
-                        <td>70.62</td>
-                        </tr>
-                        <tr>
-                        <th>bachelor's degree</th>
-                        <td>69.43</td>
-                        <td>72.70</td>
-                        <td>72.71</td>
-                        <td>71.61</td>
-                        </tr>
-                        <tr>
-                        <th>high school</th>
-                        <td>64.44</td>
-                        <td>67.63</td>
-                        <td>65.59</td>
-                        <td>65.90</td>
-                        </tr>
-                        <tr>
-                        <th>master's degree</th>
-                        <td>71.92</td>
-                        <td>75.69</td>
-                        <td>75.88</td>
-                        <td>74.50</td>
-                        </tr>
-                        <tr>
-                        <th>some college</th>
-                        <td>66.52</td>
-                        <td>69.71</td>
-                        <td>68.96</td>
-                        <td>68.40</td>
-                        </tr>
-                        <tr>
-                        <th>some high school</th>
-                        <td>62.91</td>
-                        <td>66.02</td>
-                        <td>64.05</td>
-                        <td>64.32</td>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                </div>
-            
-            <img src="images/overall_score_lunch.png" alt="overall_score_lunch"><br>
-
-            <div class="output_html rendered_html output_subarea output_execute_result">
-                <div>
-                    <table border="1" class="dataframe">
-                    <thead>
-                        <tr style="text-align: right;">
-                        <th></th>
-                        <th>math score</th>
-                        <th>reading score</th>
-                        <th>writing score</th>
-                        <th>composite score</th>
-                        </tr>
-                        <tr>
-                        <th>lunch</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th>free/reduced</th>
-                        <td>58.95</td>
-                        <td>64.81</td>
-                        <td>63.06</td>
-                        <td>62.28</td>
-                        </tr>
-                        <tr>
-                        <th>standard</th>
-                        <td>70.76</td>
-                        <td>72.49</td>
-                        <td>71.71</td>
-                        <td>71.66</td>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                </div>
-            
-            <img src="images/overall_score_test_prep.png" alt="overall_score_test_prep"><br>
+    <!-- Overall - Education-->  
+            <img src="images/overall_score_par_ed.png" alt="overall_score_par_ed">
+            <br>
+                <table class="table table-sm table-hover">
+                <thead>
+                    <th></th>
+                    <th>math score</th>
+                    <th>reading score</th>
+                    <th>writing score</th>
+                    <th>composite score</th>
+                    </tr>
+                    <tr>
+                    <th>parental level of education</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th>associate's degree</th>
+                    <td>68.94</td>
+                    <td>71.92</td>
+                    <td>70.99</td>
+                    <td>70.62</td>
+                    </tr>
+                    <tr>
+                    <th>bachelor's degree</th>
+                    <td>69.43</td>
+                    <td>72.70</td>
+                    <td>72.71</td>
+                    <td>71.61</td>
+                    </tr>
+                    <tr>
+                    <th>high school</th>
+                    <td>64.44</td>
+                    <td>67.63</td>
+                    <td>65.59</td>
+                    <td>65.90</td>
+                    </tr>
+                    <tr>
+                    <th>master's degree</th>
+                    <td>71.92</td>
+                    <td>75.69</td>
+                    <td>75.88</td>
+                    <td>74.50</td>
+                    </tr>
+                    <tr>
+                    <th>some college</th>
+                    <td>66.52</td>
+                    <td>69.71</td>
+                    <td>68.96</td>
+                    <td>68.40</td>
+                    </tr>
+                    <tr>
+                    <th>some high school</th>
+                    <td>62.91</td>
+                    <td>66.02</td>
+                    <td>64.05</td>
+                    <td>64.32</td>
+                    </tr>
+                </tbody>
+                </table>
+    <!-- Overall - Lunch -->  
+            <img src="images/overall_score_lunch.png" alt="overall_score_lunch">
+            <br>              
+                <table class="table table-sm table-hover">
+                <thead>
+                    <th></th>
+                    <th>math score</th>
+                    <th>reading score</th>
+                    <th>writing score</th>
+                    <th>composite score</th>
+                    </tr>
+                    <tr>
+                    <th>lunch</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th>free/reduced</th>
+                    <td>58.95</td>
+                    <td>64.81</td>
+                    <td>63.06</td>
+                    <td>62.28</td>
+                    </tr>
+                    <tr>
+                    <th>standard</th>
+                    <td>70.76</td>
+                    <td>72.49</td>
+                    <td>71.71</td>
+                    <td>71.66</td>
+                    </tr>
+                </tbody>
+                </table>
+               
                 
-            <div class="output_html rendered_html output_subarea output_execute_result">
-                <div>
-                    <table border="1" class="dataframe">
-                    <thead>
-                        <tr style="text-align: right;">
-                        <th></th>
-                        <th>math score</th>
-                        <th>reading score</th>
-                        <th>writing score</th>
-                        <th>composite score</th>
-                        </tr>
-                        <tr>
-                        <th>test preparation course</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th>completed</th>
-                        <td>70.254596</td>
-                        <td>74.438997</td>
-                        <td>75.220056</td>
-                        <td>73.312535</td>
-                        </tr>
-                        <tr>
-                        <th>none</th>
-                        <td>64.566927</td>
-                        <td>67.185959</td>
-                        <td>65.003744</td>
-                        <td>65.585335</td>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                </div>
-            
+    <!-- Overall - Test Prep-->  
+            <img src="images/overall_score_test_prep.png" alt="overall_score_test_prep">
+            <br>                
+                <table class="table table-sm table-hover">  
+                <thead>
+                    <th></th>
+                    <th>math score</th>
+                    <th>reading score</th>
+                    <th>writing score</th>
+                    <th>composite score</th>
+                    </tr>
+                    <tr>
+                    <th>test preparation course</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th>completed</th>
+                    <td>70.254596</td>
+                    <td>74.438997</td>
+                    <td>75.220056</td>
+                    <td>73.312535</td>
+                    </tr>
+                    <tr>
+                    <th>none</th>
+                    <td>64.566927</td>
+                    <td>67.185959</td>
+                    <td>65.003744</td>
+                    <td>65.585335</td>
+                    </tr>
+                </tbody>
+                </table> 
         <br>
         <p>
             Already we can see an achievement gap between group E and groups A and B. Also there is an education based achievement gap that is particularly large between children with parents that have not finished high school and children with parents that hold an advanced degree. Below are some charts that reflect these findings.The bar graph also clearly shows an economic achievement gap in the lunch chart.
@@ -333,204 +304,194 @@
             This series of graphs breaks down the mean test scores by gender vs ethnicity, parent's education, and whether or not the child is getting free lunch. While this series a graphs follows the same trajectory as those prior, two trends become apparent. That is, exactly how much math scores struggle for girls 
             from more disadvantaged demographics. The same can be said for boys and writing. The more disadvantaged the demographic, the worse the mean score is particularly for children of the least educated parents. 
         </p>
-            <img src="images/gender_race_eth.png" alt="gender_race_eth"><br>
-
-            <div class="output_html rendered_html output_subarea output_execute_result">
-                <div>
-                    <table border="1" class="dataframe">
-                    <thead>
-                        <tr style="text-align: right;">
-                        <th></th>
-                        <th>Boys Math Mean</th>
-                        <th>Girls Math Mean</th>
-                        <th>Boys Reading Mean</th>
-                        <th>Girls Reading Mean</th>
-                        <th>Boys Writing Mean</th>
-                        <th>Girls Writing Mean</th>
-                        <th>Boys Composite</th>
-                        <th>Girls Composite</th>
-                        </tr>
-                        <tr>
-                        <th>race/ethnicity</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th>group A</th>
-                        <td>66.30</td>
-                        <td>61.17</td>
-                        <td>64.19</td>
-                        <td>71.49</td>
-                        <td>61.41</td>
-                        <td>70.50</td>
-                        <td>63.96</td>
-                        <td>67.71</td>
-                        </tr>
-                        <tr>
-                        <th>group B</th>
-                        <td>65.67</td>
-                        <td>61.27</td>
-                        <td>63.71</td>
-                        <td>70.88</td>
-                        <td>60.83</td>
-                        <td>70.32</td>
-                        <td>63.42</td>
-                        <td>67.51</td>
-                        </tr>
-                        <tr>
-                        <th>group C</th>
-                        <td>67.76</td>
-                        <td>61.78</td>
-                        <td>65.71</td>
-                        <td>71.95</td>
-                        <td>63.39</td>
-                        <td>71.26</td>
-                        <td>65.63</td>
-                        <td>68.33</td>
-                        </tr>
-                        <tr>
-                        <th>group D</th>
-                        <td>70.88</td>
-                        <td>65.30</td>
-                        <td>68.15</td>
-                        <td>73.83</td>
-                        <td>67.47</td>
-                        <td>75.18</td>
-                        <td>68.84</td>
-                        <td>71.43</td>
-                        </tr>
-                        <tr>
-                        <th>group E</th>
-                        <td>77.44</td>
-                        <td>72.67</td>
-                        <td>70.87</td>
-                        <td>77.77</td>
-                        <td>67.96</td>
-                        <td>77.17</td>
-                        <td>72.08</td>
-                        <td>75.86</td>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                </div>
+    <!-- Gender - Ethnicity-->  
+            <img src="images/gender_race_eth.png" alt="gender_race_eth">
+            <br>                
+            <table class="table table-sm table-hover">  
+            <thead>
+                <th></th>
+                <th>Boys Math Mean</th>
+                <th>Girls Math Mean</th>
+                <th>Boys Reading Mean</th>
+                <th>Girls Reading Mean</th>
+                <th>Boys Writing Mean</th>
+                <th>Girls Writing Mean</th>
+                <th>Boys Composite</th>
+                <th>Girls Composite</th>
+                </tr>
+                <tr>
+                <th>race/ethnicity</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th>group A</th>
+                <td>66.30</td>
+                <td>61.17</td>
+                <td>64.19</td>
+                <td>71.49</td>
+                <td>61.41</td>
+                <td>70.50</td>
+                <td>63.96</td>
+                <td>67.71</td>
+                </tr>
+                <tr>
+                <th>group B</th>
+                <td>65.67</td>
+                <td>61.27</td>
+                <td>63.71</td>
+                <td>70.88</td>
+                <td>60.83</td>
+                <td>70.32</td>
+                <td>63.42</td>
+                <td>67.51</td>
+                </tr>
+                <tr>
+                <th>group C</th>
+                <td>67.76</td>
+                <td>61.78</td>
+                <td>65.71</td>
+                <td>71.95</td>
+                <td>63.39</td>
+                <td>71.26</td>
+                <td>65.63</td>
+                <td>68.33</td>
+                </tr>
+                <tr>
+                <th>group D</th>
+                <td>70.88</td>
+                <td>65.30</td>
+                <td>68.15</td>
+                <td>73.83</td>
+                <td>67.47</td>
+                <td>75.18</td>
+                <td>68.84</td>
+                <td>71.43</td>
+                </tr>
+                <tr>
+                <th>group E</th>
+                <td>77.44</td>
+                <td>72.67</td>
+                <td>70.87</td>
+                <td>77.77</td>
+                <td>67.96</td>
+                <td>77.17</td>
+                <td>72.08</td>
+                <td>75.86</td>
+                </tr>
+            </tbody>
+            </table>    
+            <br>
+    <!-- Gender - Education-->  
+            <img src="images/gender_par_ed.png" alt="gender_par_ed">
+            <br>
+                <table class="table table-sm table-hover">
+                <thead>
+                    <th></th>
+                    <th>Boys Math Mean</th>
+                    <th>Girls Math Mean</th>
+                    <th>Boys Reading Mean</th>
+                    <th>Girls Reading Mean</th>
+                    <th>Boys Writing Mean</th>
+                    <th>Girls Writing Mean</th>
+                    <th>Boys Composite</th>
+                    <th>Girls Composite</th>
+                    </tr>
+                    <tr>
+                    <th>parental level of education</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th>associate's degree</th>
+                    <td>71.58</td>
+                    <td>66.31</td>
+                    <td>68.70</td>
+                    <td>75.15</td>
+                    <td>66.67</td>
+                    <td>75.30</td>
+                    <td>68.98</td>
+                    <td>72.26</td>
+                    </tr>
+                    <tr>
+                    <th>bachelor's degree</th>
+                    <td>72.34</td>
+                    <td>66.51</td>
+                    <td>69.58</td>
+                    <td>75.82</td>
+                    <td>68.78</td>
+                    <td>76.63</td>
+                    <td>70.25</td>
+                    <td>72.98</td>
+                    </tr>
+                    <tr>
+                    <th>high school</th>
+                    <td>67.35</td>
+                    <td>61.62</td>
+                    <td>64.52</td>
+                    <td>70.66</td>
+                    <td>61.48</td>
+                    <td>69.59</td>
+                    <td>64.47</td>
+                    <td>67.28</td>
+                    </tr>
+                    <tr>
+                    <th>master's degree</th>
+                    <td>74.98</td>
+                    <td>69.14</td>
+                    <td>71.96</td>
+                    <td>79.08</td>
+                    <td>71.71</td>
+                    <td>79.68</td>
+                    <td>72.88</td>
+                    <td>75.97</td>
+                    </tr>
+                    <tr>
+                    <th>some college</th>
+                    <td>68.96</td>
+                    <td>64.29</td>
+                    <td>66.01</td>
+                    <td>73.11</td>
+                    <td>64.22</td>
+                    <td>73.31</td>
+                    <td>66.39</td>
+                    <td>70.24</td>
+                    </tr>
+                    <tr>
+                    <th>some high school</th>
+                    <td>65.73</td>
+                    <td>60.17</td>
+                    <td>63.07</td>
+                    <td>68.90</td>
+                    <td>59.89</td>
+                    <td>68.10</td>
+                    <td>62.88</td>
+                    <td>65.72</td>
+                    </tr>
+                </tbody>
+                </table>
                 <br>
-            <img src="images/gender_par_ed.png" alt="gender_par_ed"><br>
-
-            <div class="output_html rendered_html output_subarea output_execute_result">
-                <div>
-                    <table border="1" class="dataframe">
+    <!-- Gender - Lunch-->  
+            <img src="images/gender_lunch.png" alt="gender_lunch">
+            <br>
+                    <table class="table table-sm table-hover">
                     <thead>
-                        <tr style="text-align: right;">
-                        <th></th>
-                        <th>Boys Math Mean</th>
-                        <th>Girls Math Mean</th>
-                        <th>Boys Reading Mean</th>
-                        <th>Girls Reading Mean</th>
-                        <th>Boys Writing Mean</th>
-                        <th>Girls Writing Mean</th>
-                        <th>Boys Composite</th>
-                        <th>Girls Composite</th>
-                        </tr>
-                        <tr>
-                        <th>parental level of education</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th>associate's degree</th>
-                        <td>71.58</td>
-                        <td>66.31</td>
-                        <td>68.70</td>
-                        <td>75.15</td>
-                        <td>66.67</td>
-                        <td>75.30</td>
-                        <td>68.98</td>
-                        <td>72.26</td>
-                        </tr>
-                        <tr>
-                        <th>bachelor's degree</th>
-                        <td>72.34</td>
-                        <td>66.51</td>
-                        <td>69.58</td>
-                        <td>75.82</td>
-                        <td>68.78</td>
-                        <td>76.63</td>
-                        <td>70.25</td>
-                        <td>72.98</td>
-                        </tr>
-                        <tr>
-                        <th>high school</th>
-                        <td>67.35</td>
-                        <td>61.62</td>
-                        <td>64.52</td>
-                        <td>70.66</td>
-                        <td>61.48</td>
-                        <td>69.59</td>
-                        <td>64.47</td>
-                        <td>67.28</td>
-                        </tr>
-                        <tr>
-                        <th>master's degree</th>
-                        <td>74.98</td>
-                        <td>69.14</td>
-                        <td>71.96</td>
-                        <td>79.08</td>
-                        <td>71.71</td>
-                        <td>79.68</td>
-                        <td>72.88</td>
-                        <td>75.97</td>
-                        </tr>
-                        <tr>
-                        <th>some college</th>
-                        <td>68.96</td>
-                        <td>64.29</td>
-                        <td>66.01</td>
-                        <td>73.11</td>
-                        <td>64.22</td>
-                        <td>73.31</td>
-                        <td>66.39</td>
-                        <td>70.24</td>
-                        </tr>
-                        <tr>
-                        <th>some high school</th>
-                        <td>65.73</td>
-                        <td>60.17</td>
-                        <td>63.07</td>
-                        <td>68.90</td>
-                        <td>59.89</td>
-                        <td>68.10</td>
-                        <td>62.88</td>
-                        <td>65.72</td>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                </div>
-                <br>
-            <img src="images/gender_lunch.png" alt="gender_lunch"><br>
-
-            <div class="output_html rendered_html output_subarea output_execute_result">
-                <div>
-                    <table border="1" class="dataframe">
-                    <thead>
-                        <tr style="text-align: right;">
                         <th></th>
                         <th>Boys Math Mean</th>
                         <th>Girls Math Mean</th>
@@ -578,17 +539,14 @@
                         </tr>
                     </tbody>
                     </table>
-                </div>
-                </div>
                 <br>
-
+    <!-- Gender - Test Prep-->  
             <img src="images/gender_test_prep.png" alt="gender_test_prep"><br>
                 
-            <div class="output_html rendered_html output_subarea output_execute_result">
-                <div>
-                    <table border="1" class="dataframe">
+            
+                
+                    <table class="table table-sm table-hover">
                     <thead>
-                        <tr style="text-align: right;">
                         <th></th>
                         <th>Boys Math Mean</th>
                         <th>Girls Math Mean</th>
@@ -636,25 +594,29 @@
                         </tr>
                     </tbody>
                     </table>
-                </div>
-                </div>
+                
+                
         <br>
         <p>
             These charts mostly reinforce what is discussed at the beginning. Something that is notable is that with the exception of math, girls tend to produce better test scores. That is true across all demographics, at least according to this data. Something that we believe is of note is that the reading score seem sto be very closely correlated with writing. If the reading score is good, so is writing.
         </p>
         <br>
         <hr>
-        <h3>Parent's Education and Ethnicity</h3>
+        <h3>Demographic Breakdown</h3>
         <br>
+    <!-- Doughnut Chart -->  
         <h4>Distribution of students - Parent's Education level</h4>
             <img src="images/per_pop_ed.png" alt="per_pop_ed"><br>
         <h4>Distribution of students - Ethnicity</h4>
+    <!-- Pie Chart -->  
             <img src="images/per_pop_eth.png" alt="per_pop_eth"><br>
         <h4>Passing Rate - Parent's Education level</h4>
+    <!-- Passing Rate - Education -->  
             <img src="images/pass_rate_ed.png" alt="pass_rate_ed">
-            <table border="1" class="dataframe">
+
+
+            <table class="table table-sm table-hover">
                 <thead>
-                  <tr style="text-align: right;">
                     <th></th>
                     <th>Math</th>
                     <th>Reading</th>
@@ -715,10 +677,11 @@
                 </tbody>
               </table>
             <br>
+    <!-- Passing Rate - Ethnicity -->  
             <img src="images/pass_rate_eth.png" alt="pass_rate_eth">
-            <table border="1" class="dataframe">
+
+            <table class="table table-sm table-hover">
                 <thead>
-                  <tr style="text-align: right;">
                     <th></th>
                     <th>Math</th>
                     <th>Reading</th>
@@ -784,197 +747,281 @@
         <p>
             This is an indicator of poverty. This section focuses on the effect of poverty through examining the differences between performance in children who recieve free or subsidized lunch and children who's families pay for lunch.
         </p>
+
+        <table class="table table-sm table-hover">
+            <thead>
+                <th>Group - % Reduced Lunch</th>
+                <th>Group Total</th>
+                <th>Count</th>
+                <th>Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Group A</th>
+                <td>417</td>
+                <td>152</td>
+                <td>36.0</td>
+              </tr>
+              <tr>
+                <th>Group C</th>
+                <td>1575</td>
+                <td>571</td>
+                <td>36.0</td>
+              </tr>
+              <tr>
+                <th>Group B</th>
+                <td>1025</td>
+                <td>356</td>
+                <td>35.0</td>
+              </tr>
+              <tr>
+                <th>Group D</th>
+                <td>1313</td>
+                <td>455</td>
+                <td>35.0</td>
+              </tr>
+              <tr>
+                <th>Group E</th>
+                <td>670</td>
+                <td>224</td>
+                <td>33.0</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+
+          <table class="table table-sm table-hover">
+            <thead>
+                <th>Group - % Reduced Lunch</th>
+                <th>Group Total</th>
+                <th>Count</th>
+                <th>Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>      
+                <th>Masters</th>
+                <td>319</td>
+                <td>125</td>
+                <td>39.0</td>
+              </tr>
+              <tr>     
+                <th>Bachelors</th>
+                <td>618</td>
+                <td>231</td>
+                <td>37.0</td>
+              </tr>
+              <tr>      
+                <th>Some College</th>
+                <td>1160</td>
+                <td>416</td>
+                <td>36.0</td>
+              </tr>
+              <tr>       
+                <th>Some High School</th>
+                <td>931</td>
+                <td>321</td>
+                <td>34.0</td>
+              </tr>
+              <tr>      
+                <th>High School</th>
+                <td>999</td>
+                <td>340</td>
+                <td>34.0</td>
+              </tr>
+              <tr>
+                <th>Associates</th>
+                <td>973</td>
+                <td>325</td>
+                <td>33.0</td>
+              </tr>
+            </tbody>
+          </table>  
+          <br>
+
+    <!-- Lunch - Education -->  
             <img src="images/lunch_ed.png" alt="lunch_ed">
-
-            <div class="output_html rendered_html output_subarea output_execute_result">
-                <div>
-                    <table border="1" class="dataframe">
-                        <table border="1" class="dataframe">
-                            <thead>
-                                <tr style="text-align: right;">
-                                <th></th>
-                                <th>RDC Math Score</th>
-                                <th>STD Math Score</th>
-                                <th>RDC Reading Score</th>
-                                <th>STD Reading Score</th>
-                                <th>RDC Writing Score</th>
-                                <th>STD Writing Score</th>
-                                <th>RDC Composite</th>
-                                <th>STD Composite</th>
-                                </tr>
-                                <tr>
-                                <th>parental level of education</th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <th>master's degree</th>
-                                <td>65.44</td>
-                                <td>76.10</td>
-                                <td>72.11</td>
-                                <td>77.99</td>
-                                <td>71.48</td>
-                                <td>78.72</td>
-                                <td>69.65</td>
-                                <td>77.62</td>
-                                </tr>
-                                <tr>
-                                <th>bachelor's degree</th>
-                                <td>62.33</td>
-                                <td>73.66</td>
-                                <td>68.55</td>
-                                <td>75.18</td>
-                                <td>67.80</td>
-                                <td>75.64</td>
-                                <td>66.23</td>
-                                <td>74.83</td>
-                                </tr>
-                                <tr>
-                                <th>associate's degree</th>
-                                <td>60.91</td>
-                                <td>72.97</td>
-                                <td>66.85</td>
-                                <td>74.47</td>
-                                <td>65.11</td>
-                                <td>73.94</td>
-                                <td>64.30</td>
-                                <td>73.79</td>
-                                </tr>
-                                <tr>
-                                <th>some college</th>
-                                <td>58.76</td>
-                                <td>70.86</td>
-                                <td>64.67</td>
-                                <td>72.53</td>
-                                <td>63.39</td>
-                                <td>72.07</td>
-                                <td>62.29</td>
-                                <td>71.82</td>
-                                </tr>
-                                <tr>
-                                <th>high school</th>
-                                <td>56.61</td>
-                                <td>68.48</td>
-                                <td>62.33</td>
-                                <td>70.36</td>
-                                <td>59.74</td>
-                                <td>68.61</td>
-                                <td>59.58</td>
-                                <td>69.15</td>
-                                </tr>
-                                <tr>
-                                <th>some high school</th>
-                                <td>54.74</td>
-                                <td>67.21</td>
-                                <td>60.02</td>
-                                <td>69.18</td>
-                                <td>57.37</td>
-                                <td>67.56</td>
-                                <td>57.36</td>
-                                <td>67.98</td>
-                                </tr>
-                            </tbody>
-                            </table>
-                </div>
-                </div>
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <th></th>
+                        <th>RDC Math Score</th>
+                        <th>STD Math Score</th>
+                        <th>RDC Reading Score</th>
+                        <th>STD Reading Score</th>
+                        <th>RDC Writing Score</th>
+                        <th>STD Writing Score</th>
+                        <th>RDC Composite</th>
+                        <th>STD Composite</th>
+                        </tr>
+                        <tr>
+                        <th>parental level of education</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th>master's degree</th>
+                        <td>65.44</td>
+                        <td>76.10</td>
+                        <td>72.11</td>
+                        <td>77.99</td>
+                        <td>71.48</td>
+                        <td>78.72</td>
+                        <td>69.65</td>
+                        <td>77.62</td>
+                        </tr>
+                        <tr>
+                        <th>bachelor's degree</th>
+                        <td>62.33</td>
+                        <td>73.66</td>
+                        <td>68.55</td>
+                        <td>75.18</td>
+                        <td>67.80</td>
+                        <td>75.64</td>
+                        <td>66.23</td>
+                        <td>74.83</td>
+                        </tr>
+                        <tr>
+                        <th>associate's degree</th>
+                        <td>60.91</td>
+                        <td>72.97</td>
+                        <td>66.85</td>
+                        <td>74.47</td>
+                        <td>65.11</td>
+                        <td>73.94</td>
+                        <td>64.30</td>
+                        <td>73.79</td>
+                        </tr>
+                        <tr>
+                        <th>some college</th>
+                        <td>58.76</td>
+                        <td>70.86</td>
+                        <td>64.67</td>
+                        <td>72.53</td>
+                        <td>63.39</td>
+                        <td>72.07</td>
+                        <td>62.29</td>
+                        <td>71.82</td>
+                        </tr>
+                        <tr>
+                        <th>high school</th>
+                        <td>56.61</td>
+                        <td>68.48</td>
+                        <td>62.33</td>
+                        <td>70.36</td>
+                        <td>59.74</td>
+                        <td>68.61</td>
+                        <td>59.58</td>
+                        <td>69.15</td>
+                        </tr>
+                        <tr>
+                        <th>some high school</th>
+                        <td>54.74</td>
+                        <td>67.21</td>
+                        <td>60.02</td>
+                        <td>69.18</td>
+                        <td>57.37</td>
+                        <td>67.56</td>
+                        <td>57.36</td>
+                        <td>67.98</td>
+                        </tr>
+                    </tbody>
+                    </table>
                 <br>
+    <!-- Lunch - Ethnicity --> 
             <img src="images/lunch_race_eth.png" alt="lunch_race_eth">
-
-            <div class="output_html rendered_html output_subarea output_execute_result">
-                <div>
-                    <table border="1" class="dataframe">
-                        <thead>
-                          <tr style="text-align: right;">
-                            <th></th>
-                            <th>RDC Math Score</th>
-                            <th>STD Math Score</th>
-                            <th>RDC Reading Score</th>
-                            <th>STD Reading Score</th>
-                            <th>RDC Writing Score</th>
-                            <th>STD Writing Score</th>
-                            <th>RDC Composite</th>
-                            <th>STD Composite</th>
-                          </tr>
-                          <tr>
-                            <th>race/ethnicity</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th>group E</th>
-                            <td>67.22</td>
-                            <td>79.02</td>
-                            <td>69.50</td>
-                            <td>76.70</td>
-                            <td>67.24</td>
-                            <td>75.17</td>
-                            <td>67.99</td>
-                            <td>76.95</td>
-                          </tr>
-                          <tr>
-                            <th>group D</th>
-                            <td>59.85</td>
-                            <td>72.41</td>
-                            <td>65.83</td>
-                            <td>73.78</td>
-                            <td>65.82</td>
-                            <td>74.31</td>
-                            <td>63.85</td>
-                            <td>73.49</td>
-                          </tr>
-                          <tr>
-                            <th>group C</th>
-                            <td>57.98</td>
-                            <td>68.33</td>
-                            <td>64.71</td>
-                            <td>71.50</td>
-                            <td>62.36</td>
-                            <td>70.56</td>
-                            <td>61.69</td>
-                            <td>70.13</td>
-                          </tr>
-                          <tr>
-                            <th>group A</th>
-                            <td>55.93</td>
-                            <td>68.22</td>
-                            <td>62.41</td>
-                            <td>70.93</td>
-                            <td>59.80</td>
-                            <td>69.46</td>
-                            <td>59.34</td>
-                            <td>69.55</td>
-                          </tr>
-                          <tr>
-                            <th>group B</th>
-                            <td>55.46</td>
-                            <td>67.80</td>
-                            <td>61.73</td>
-                            <td>70.14</td>
-                            <td>59.41</td>
-                            <td>68.70</td>
-                            <td>58.87</td>
-                            <td>68.91</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                </div>
-                </div>
+                <table class="table table-sm table-hover">
+                <thead>
+                    <th></th>
+                    <th>RDC Math Score</th>
+                    <th>STD Math Score</th>
+                    <th>RDC Reading Score</th>
+                    <th>STD Reading Score</th>
+                    <th>RDC Writing Score</th>
+                    <th>STD Writing Score</th>
+                    <th>RDC Composite</th>
+                    <th>STD Composite</th>
+                    </tr>
+                    <tr>
+                    <th>race/ethnicity</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th>group E</th>
+                    <td>67.22</td>
+                    <td>79.02</td>
+                    <td>69.50</td>
+                    <td>76.70</td>
+                    <td>67.24</td>
+                    <td>75.17</td>
+                    <td>67.99</td>
+                    <td>76.95</td>
+                    </tr>
+                    <tr>
+                    <th>group D</th>
+                    <td>59.85</td>
+                    <td>72.41</td>
+                    <td>65.83</td>
+                    <td>73.78</td>
+                    <td>65.82</td>
+                    <td>74.31</td>
+                    <td>63.85</td>
+                    <td>73.49</td>
+                    </tr>
+                    <tr>
+                    <th>group C</th>
+                    <td>57.98</td>
+                    <td>68.33</td>
+                    <td>64.71</td>
+                    <td>71.50</td>
+                    <td>62.36</td>
+                    <td>70.56</td>
+                    <td>61.69</td>
+                    <td>70.13</td>
+                    </tr>
+                    <tr>
+                    <th>group A</th>
+                    <td>55.93</td>
+                    <td>68.22</td>
+                    <td>62.41</td>
+                    <td>70.93</td>
+                    <td>59.80</td>
+                    <td>69.46</td>
+                    <td>59.34</td>
+                    <td>69.55</td>
+                    </tr>
+                    <tr>
+                    <th>group B</th>
+                    <td>55.46</td>
+                    <td>67.80</td>
+                    <td>61.73</td>
+                    <td>70.14</td>
+                    <td>59.41</td>
+                    <td>68.70</td>
+                    <td>58.87</td>
+                    <td>68.91</td>
+                    </tr>
+                </tbody>
+                </table>
+                
+                
                 <br>
         <p>
             It doesn't matter the level of education. There's a huge difference in scores between children receiving reduced lunch and children recieving paid lunch. Especially in math. According to this data.
@@ -987,11 +1034,69 @@
         <p>
             This examines the effect of the test prep course on scores. We will try to use the data that were created above to examine the effect on test scores in various circumstances. This data shows that about 35% of students take the test.
         </p>
+
+        <table class="table table-sm table-hover">
+            <thead>
+                <th>Group</th>
+                <th>Completion Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>       
+                <th>Group A</th>
+                <td>36.0</td>
+              </tr>
+              <tr>        
+                <th>Group B</th>
+                <td>34.0</td>
+              </tr>
+              <tr>        
+                <th>Group C</th>
+                <td>36.0</td>
+              </tr>
+              <tr>        
+                <th>Group D</th>
+                <td>37.0</td>
+              </tr>
+              <tr>       
+                <th>Group E</th>
+                <td>37.0</td>
+              </tr>
+              <tr>
+                  <th></th>
+                  <td></td>
+              </tr>
+              <tr>       
+                <th>Some High School</th>
+                <td>35.0</td>
+              </tr>
+              <tr>        
+                <th>High School</th>
+                <td>34.0</td>
+              </tr>
+              <tr>       
+                <th>Some College</th>
+                <td>36.0</td>
+              </tr>
+              <tr>       
+                <th>Associates</th>
+                <td>37.0</td>
+              </tr>
+              <tr>    
+                <th>Bachelors</th>
+                <td>37.0</td>
+              </tr>
+              <tr>
+                <th>Masters</th>
+                <td>39.0</td>
+              </tr>
+            </tbody>
+          </table>
+    <!-- Test Prep - Education --> 
             <img src="images/test_prep_ed.png" alt="test_prep_ed">
 
-            <table border="1" class="dataframe">
+            <table class="table table-sm table-hover">
                 <thead>
-                  <tr style="text-align: right;">
                     <th></th>
                     <th>yes Math Score</th>
                     <th>no Math Score</th>
@@ -1086,10 +1191,9 @@
             
               <br>
             <img src="images/test_prep_race_eth.png"alt="test_prep_race_eth">
-              
-            <table border="1" class="dataframe">
+    <!-- Lunch - Ethnicity --> 
+                <table class="table table-sm table-hover">
                 <thead>
-                  <tr style="text-align: right;">
                     <th></th>
                     <th>yes Math Score</th>
                     <th>no Math Score</th>
@@ -1171,6 +1275,245 @@
                 </tbody>
               </table>
             <br>
+        <img src="images/boys_delta_eth.png"alt="boys_delta_eth"><br>
+        <table class="table table-sm table-hover">
+            <thead>
+                <th></th>
+                <th>Math Delta</th>
+                <th>Reading Delta</th>
+                <th>Writing Delta</th>
+                <th>Composite Delta</th>
+              </tr>
+              <tr>
+                <th>race/ethnicity</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>group A</th>
+                <td>6.96</td>
+                <td>8.06</td>
+                <td>11.03</td>
+                <td>8.68</td>
+              </tr>
+              <tr>
+                <th>group B</th>
+                <td>8.06</td>
+                <td>8.95</td>
+                <td>11.66</td>
+                <td>9.58</td>
+              </tr>
+              <tr>
+                <th>group C</th>
+                <td>3.96</td>
+                <td>6.29</td>
+                <td>9.05</td>
+                <td>6.46</td>
+              </tr>
+              <tr>
+                <th>group D</th>
+                <td>4.90</td>
+                <td>7.23</td>
+                <td>10.54</td>
+                <td>7.56</td>
+              </tr>
+              <tr>
+                <th>group E</th>
+                <td>5.91</td>
+                <td>6.17</td>
+                <td>9.55</td>
+                <td>7.21</td>
+              </tr>
+            </tbody>
+          </table>    
+        <img src="images/girls_delta_eth.png"alt="girls_delta_eth"><br>
+
+        <table class="table table-sm table-hover">
+            <thead>
+                <th></th>
+                <th>Math Delta</th>
+                <th>Reading Delta</th>
+                <th>Writing Delta</th>
+                <th>Composite Delta</th>
+              </tr>
+              <tr>
+                <th>race/ethnicity</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>group A</th>
+                <td>7.12</td>
+                <td>8.36</td>
+                <td>11.84</td>
+                <td>9.09</td>
+              </tr>
+              <tr>
+                <th>group B</th>
+                <td>5.71</td>
+                <td>7.81</td>
+                <td>10.64</td>
+                <td>8.03</td>
+              </tr>
+              <tr>
+                <th>group C</th>
+                <td>6.54</td>
+                <td>8.12</td>
+                <td>11.36</td>
+                <td>8.71</td>
+              </tr>
+              <tr>
+                <th>group D</th>
+                <td>4.45</td>
+                <td>6.29</td>
+                <td>9.02</td>
+                <td>6.57</td>
+              </tr>
+              <tr>
+                <th>group E</th>
+                <td>3.61</td>
+                <td>5.64</td>
+                <td>7.92</td>
+                <td>5.73</td>
+              </tr>
+            </tbody>
+          </table>
+
+        <img src="images/boys_delta_ed.png"alt="boys_delta_ed"><br>
+        <table class="table table-sm table-hover">
+            <thead>
+                <th></th>
+                <th>Math Delta</th>
+                <th>Reading Delta</th>
+                <th>Writing Delta</th>
+                <th>Composite Delta</th>
+              </tr>
+              <tr>
+                <th>parental level of education</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>associate's degree</th>
+                <td>6.69</td>
+                <td>7.92</td>
+                <td>10.84</td>
+                <td>8.49</td>
+              </tr>
+              <tr>
+                <th>bachelor's degree</th>
+                <td>5.83</td>
+                <td>8.08</td>
+                <td>10.72</td>
+                <td>8.18</td>
+              </tr>
+              <tr>
+                <th>high school</th>
+                <td>4.59</td>
+                <td>6.04</td>
+                <td>9.03</td>
+                <td>6.60</td>
+              </tr>
+              <tr>
+                <th>master's degree</th>
+                <td>4.50</td>
+                <td>5.42</td>
+                <td>9.50</td>
+                <td>6.45</td>
+              </tr>
+              <tr>
+                <th>some college</th>
+                <td>6.00</td>
+                <td>7.44</td>
+                <td>10.04</td>
+                <td>7.84</td>
+              </tr>
+              <tr>
+                <th>some high school</th>
+                <td>5.24</td>
+                <td>7.40</td>
+                <td>10.64</td>
+                <td>7.80</td>
+              </tr>
+            </tbody>
+          </table>
+        
+        <img src="images/boys_delta_ed.png"alt="boys_delta_ed"><br>
+
+        <table class="table table-sm table-hover">
+            <thead>
+                <th></th>
+                <th>Math Delta</th>
+                <th>Reading Delta</th>
+                <th>Writing Delta</th>
+                <th>Composite Delta</th>
+              </tr>
+              <tr>
+                <th>parental level of education</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>associate's degree</th>
+                <td>5.55</td>
+                <td>7.08</td>
+                <td>9.70</td>
+                <td>7.39</td>
+              </tr>
+              <tr>
+                <th>bachelor's degree</th>
+                <td>3.79</td>
+                <td>5.50</td>
+                <td>8.61</td>
+                <td>5.96</td>
+              </tr>
+              <tr>
+                <th>high school</th>
+                <td>5.96</td>
+                <td>7.33</td>
+                <td>10.55</td>
+                <td>7.99</td>
+              </tr>
+              <tr>
+                <th>master's degree</th>
+                <td>5.71</td>
+                <td>8.62</td>
+                <td>10.60</td>
+                <td>8.28</td>
+              </tr>
+              <tr>
+                <th>some college</th>
+                <td>4.61</td>
+                <td>6.48</td>
+                <td>9.37</td>
+                <td>6.82</td>
+              </tr>
+              <tr>
+                <th>some high school</th>
+                <td>6.47</td>
+                <td>8.16</td>
+                <td>11.38</td>
+                <td>8.71</td>
+              </tr>
+            </tbody>
+          </table>
+
          <hr>
         <h3>Machine Learning</h3>
               <h4>Decision Tree</h4>
@@ -1195,10 +1538,23 @@
                     <a href="https://drive.google.com/file/d/19SYV_WOQSF1J1bFr8aLqK7OjhQV3a0p3/view?usp=sharing" target="_blank">Logistic Regression Notebook</a>
                 </p>
             <hr>
-      </div>
+        <h2>Conclusions</h2>
+        <p>As stated early on, this data is not real data, it is artificially generated. The conclusions below are solely based on what is included in this dataset. We have no idea if these numbers are in any way true to life and are more than receptive to hearing feedback as to what student performance
+            in a real school district would look like. So that being said, here is what we've been able to see based on the data analysis above. 
+        </p>
+        <ul>
+            <li>The more educated the parent, the better the child tends to perform from the standpoint of testing.</li>
+            <li>Poverty appears to be the biggest outside hinderence to academic success, at least when it comes to the test scores in this data.</li>
+            <li>The test prep course helps, in some cases it helps a lot. The biggest benefit appears to be in writing scores.</li>
+            <li>According to this data, boys tend to struggle the most with writing and the girls tend to struggle the most with math</li>
+          </ul>
     </div>
   </div>
 
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
 

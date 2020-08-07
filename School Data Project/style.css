@@ -2,6 +2,37 @@
     background-color: #0092cc;
 }
 
+body {
+    background-color: #e8e8e9;
+}
+
+h1 {
+    color: #0092cc;
+    padding-top: 15px;
+    padding-left: auto;
+    padding-right: auto
+}
+
+h2 {
+    color: #0092cc;
+    padding-top: 15px;
+    padding-left: auto;
+    padding-right: auto
+}
+
+h3 {
+    color: #0092cc;
+    padding-top: 15px; 
+}
+
+.container {
+    margin-bottom: 50px;
+    background-color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 50px
+}
+
 header {
     font-size: 60px;
     color: white;
@@ -15,8 +46,18 @@ subheader {
     margin-left: auto;
     margin-right: auto;
 }
-.dataframe {
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto 
+
+
+.table-striped {
+    margin-left: 10%;
+    margin-right: auto;
+}	
+
+
+thead {
+    font-size: small;
+}
+
+td {
+    font-size: small;
 }
